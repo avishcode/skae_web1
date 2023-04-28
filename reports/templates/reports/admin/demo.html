@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="eng">
+<head>
+  <title>SKAE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- owl carousel css --> 
+  <link rel="stylesheet" href="{% static 'reports/css/owl.carousel.min.css' %}"> 
+  <!-- font awesome icons --> 
+  <link rel="stylesheet" href="{% static 'reports/css/font-awesome.css' %}"> 
+  <!-- bootstrap css --> 
+  <link rel="stylesheet" href="{% static 'reports/css/bootstrap.min.css' %}"> 
+  <!-- main css -->
+  <link rel="stylesheet" href="{% static 'reports/css/report_app.css' %}">
+  <!-- Boxicons CDN links -->
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>  
+
+</head>
+
+{% comment %} <nav class="navbar navbar-expand-md fixed-top">
+    <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand" href="/"><img style="width: 150px;"src="{% static 'website/img/logo/c_logo.png' %}" alt=""></a>
+
+      <!-- Toggler/collapsibe Button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'website:home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'website:about-us' %}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'website:course' %}">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'website:book-demo-page' %}">Book Demo</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="{% url 'website:career' %}">Carrer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'website:contact-us' %}">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="/login" class="btn btn-1">login</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav> {% endcomment %}
+  <div class="sidebar">
+    <div class="logo-details">
+      {% comment %} <img src="{% static 'website/img/logo/c_logo.png' %}" style="width:100px" alt="logo"> {% endcomment %}
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      {% comment %} <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li> {% endcomment %}
+      <li>
+        <a href="{% url 'website:course' %}" class="active">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+         <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-droplet'></i>
+         <span class="links_name">Leads</span>
+       </a>
+       <span class="tooltip">Leads</span>
+     </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">User</span>
+       </a>
+       <span class="tooltip">User</span>
+     </li>
+     <li>
+       <a href="#" class="active">
+         <i class='bx bx-slideshow' ></i>
+         <span class="links_name">ClassRooom</span>
+       </a>
+       <span class="tooltip">ClassRooom</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-rupee' ></i>
+         <span class="links_name">Memberships</span>
+       </a>
+       <span class="tooltip">Memberships</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bxs-book' ></i>
+         <span class="links_name">Courses</span>
+       </a>
+       <span class="tooltip">Courses</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">SMS</span>
+       </a>
+       <span class="tooltip">SMS</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-pie-chart-alt-2' ></i>
+         <span class="links_name">Reports</span>
+       </a>
+       <span class="tooltip">Reports</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="{% static 'reports/img/IMG_2158.JPG' %}" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Vishal Vishwakarma</div>
+             <div class="job">Web designer</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+      <div class="text">Dashboard</div>
+     
+  </section>
+
+  <section>
+   <footer>
+  <div class="footer clearfix mb-0 text-muted">
+      <div class="float-start">
+          <p>2021 &copy; SKAE</p>
+      </div>
+      <div class="float-end">
+          <p>Crafted with <span class="text-danger"><i class='bx bxs-heart' ></i></span>
+              by <a href="https://skae.in">SKAE Team</a></p>
+      </div>
+  </div>
+</footer>
+  </section>
+
+ 
+<!-- end main section -->
+ 
+ 
+<!-- jquery js -->
+<script src="{% static 'reports/js/jquery.min.js' %}"></script>
+<!-- popper js -->
+<script src="{% static 'reports/js/popper.min.js' %}"></script>
+<!-- bootstrap js -->
+<script src="{% static 'reports/js/bootstrap.min.js' %}"></script>
+<!-- owl carousel js -->
+<script src="{% static 'reports/js/owl.carousel.min.js' %}"></script>
+<!-- main js -->
+<script src="{% static 'reports/js/report_app.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block title %}
+about
+{% endblock title %}
+{% block custom_css %}
+<style>
+    body{
+        background-color: #94bfff;
+    }
+</style>
+{% endblock custom_css %}
+
+{% block content %}
+
+<!--Director Message start-->
+<section class="director-message section-padding">
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h2>Founder & Director <span>message</span></h2>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <h3>Empowering Communication</h3>
+        <p class="mb-5 mt-5">Dear All, <br>
+          At the outset,
+          I thank you for your interest in getting associated with Skae – One of the leading spoken English
+          centers in Eastern U.P.
+          Our power of discourse is one of the most incisive ways to express our personality. No one has
+          the ability to ascertain what we contemplate/muse/dwell upon, our sentiments,wit and diligence
+          by merely see our face.It can only be understood the way we communicate or the way we
+          express our ideas in front of them.
+          The one who secures 80-90% can be unsuccessful if he fails to deliver his ideas or views
+          effectively while facing an interview. On the contrary, the one who secures 50-60% can be
+          triumphant if he knows how to expound his ideas in an impressive manner. <br>Whoever has become
+          a great leader or motivator in the millennia, it is due to their communication skills, be it in the
+          field of business or in the area of politics. We firmly believe that empowering communication plays the major role in overall Personality Development.</p>
+      </div>
+      <div class="col-md-5 text-center">
+        <img src="{% static 'website/img/director_sir.png' %}" alt="">
+        <h5 class="text-center mt-3">Founder & Director</h5>
+        <span> <b>Puneet Agrawal</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Director Message end-->
+
+<!--About Us Section Start-->
+
+<section class="about-us section-padding" data-scroll-index="1">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title">
+                    <h2>About <span>Us</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7 d-flex align-items-center justify-content-center">
+            <div class="about-us-carousel">
+              <div id="demo" class="carousel slide" data-ride="carousel">
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+              </ul>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="{% static 'website/img/about_us/pic2.jpg' %}" alt="Los Angeles" width="1100" height="300">   
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'website/img/about_us/pic3.jpg' %}" alt="Chicago" width="1100" height="300">   
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'website/img/about_us/pic4.jpg' %}" alt="New York" width="1100" height="300">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+              <div class="about-text">
+                <p>SKAE offers programs catering to various level of learners. The experience starts with a need analysis. Courses are customized to every category of learners. Also,understanding the power of technologies in this modern era SKAE started it's online classes in 2020. Where this year took a lot from us .We tried our best to connect the learners and continue the learning.<br>SKAE offers programs catering to various level of learners. The experience starts with a need analysis. Courses are customized to every category of learners. Also,understanding the power of technologies in this modern era SKAE started it's online classes in 2020. Where this year took a lot from us .We tried our best to connect the learners and continue the learning.</p>
+              </div>
+            </div>
+            <div class="container col-md-12 d-flex align-items-center justify-content-center">
+              <div class="row">
+                  <div class="about-us-item style-1">
+                  <h3>13+</h3>
+                  <span>Years</span>
+                  </div>
+        
+                
+                  <div class="about-us-item style-2">
+                  <h3>15000+</h3>
+                  <span>Trained Student</span>
+                  </div>
+      
+                  <div class="about-us-item style-3">
+                  <h3>13000+</h3>
+                  <span>certified Students</span>
+
+                </div>
+              
+                  <div class="about-us-item style-4">
+                  <h3>150000+</h3>
+                  <span>learning hours</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</section>
+<!--About Us Section End-->
+
+
+
+{% endblock content %}

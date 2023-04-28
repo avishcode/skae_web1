@@ -1,0 +1,28 @@
+{% extends "accounts/base.html" %}
+
+{% block main_content %}
+<div class="container text-left">
+ {% if messages %}
+                {% for message in messages %}
+                <p {% if message.tags %}class="alert alert-{{message.tags}}mb-5"{% endif %}>{{message}}</p>
+                {% endfor %}
+        {% endif %}
+      <h3 class="text-center">Welcome {{username}}</h3>
+             <form action="" method="post" novalidate>
+        {% csrf_token %}
+                {% if form.non_field_errors %}
+                 {% for error in form.non_field_errors %}
+                 <p>{{error}}</p>
+                 {% endfor %}
+                {% endif %}
+            {% for fm in form %}
+                {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br> <br>
+            {% endfor %}
+
+            {% comment %} <button type="submit" class="btn btn-primary">Save</button> {% endcomment %}
+        </form>
+        <a class="text-center" href="{% url 'logout' %}">Logout</a>
+        </div>
+
+
+{% endblock main_content %}

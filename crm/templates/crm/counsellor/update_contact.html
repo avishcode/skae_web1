@@ -1,0 +1,33 @@
+{% extends "reports/counsellor/base.html" %}
+
+
+{% block title %}
+
+{% endblock title %}
+
+{% block custom_css %}{% endblock custom_css %}
+
+{% block page_title %}
+
+{% endblock page_title %}
+
+
+{% block content %}
+<div class="col-lg-5 justify-content-center">
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <form method="post"> 
+                    {% csrf_token %} 
+                    {{ form.as_p }} 
+                    <button type="submit" class="btn btn-primary text-white" >Save</button>
+                    {% comment %} <input type="submit" value="Save">  {% endcomment %}
+                </form> 
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block custom_js %}{% endblock custom_js %}

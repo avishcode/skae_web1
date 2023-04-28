@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="xyz">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- owl carousel css -->
+    <link rel="stylesheet" href="{% static 'website/css/owl.carousel.min.css' %}" />
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="{% static 'website/css/font-awesome.css' %}" />
+    <!-- bootstrap4 -->
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/home.css' %}">
+    {% block custom_css %}
+    
+    {% endblock custom_css %}
+    <title>SKAE | {% block title %}    {% endblock title %}</title>
+</head>
+<body>
+    {% include 'website/navbar.html' %}
+    {% block content %}
+    
+    {% endblock content %}
+
+    {% include 'website/footer.html' %}
+    <!-- jquery js -->
+    <script src="{% static 'website/js/jquery.min.js' %}"></script>
+    <!-- popper js -->
+    <script src="{% static 'website/js/popper.min.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+    <!-- owl carousel js -->
+    <script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+    <!-- ScrollIt js -->
+    <script src="{% static 'website/js/scrollIt.min.js' %}"></script>
+
+    <script src="{% static 'website/js/home.js' %}"></script>
+
+
+    {% block custom_js %}{% endblock custom_js %}
+    
+</body>
+</html>

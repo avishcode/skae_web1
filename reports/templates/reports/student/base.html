@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+{% load static %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--========== BootStrap ICONS ==========-->
+        <link rel="stylesheet" href="{% static 'reports/css/owl.carousel.min.css' %}"> 
+        <!-- font awesome icons --> 
+        <link rel="stylesheet" href="{% static 'reports/css/font-awesome.css' %}"> 
+        <!-- bootstrap css --> 
+        <link rel="stylesheet" href="{% static 'reports/css/bootstrap.min.css' %}"> 
+        <link rel="stylesheet" href="{% static 'reports/css/sidebar2.css' %}">
+        <!--========== BOX ICONS ==========-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        {% block custom_css %}{% endblock custom_css %}
+
+        <!--========== CSS ==========-->
+          <!-- owl carousel css --> 
+
+
+        <title>{% block title %}{% endblock title %}</title>
+        {% block custom_message %}{% endblock custom_message %}
+    </head>
+    <body>
+        <!--========== HEADER ==========-->
+        <header class="header">
+            <div class="header__container">
+              
+                <a href="#" class="header__logo"><img src="{% static 'website/img/logo/c_logo.png' %}" style="width:35%" alt=""></a>
+                
+                <div class="container text-right">
+                  <img src="{% static 'website/img/logo/skae_favicon.jpg' %}" alt="" class="header__img">
+                </div>
+                <p style="margin-top: 0;
+    margin-bottom: 0rem;"> <strong>{{request.user}}</strong>
+                <span>{{ user.groups.all.0 }}</span>
+                </p>
+                {% comment %} <span>Admin</span> {% endcomment %}
+    
+                <div class="header__toggle">
+                    <i class='bx bx-menu' id="header-toggle"></i>
+                </div>
+            </div>
+        </header>
+
+        <!--========== NAV ==========-->
+        <div class="nav" id="navbar">
+            <nav class="nav__container">
+                <div>
+                    <a href="#" class="nav__link nav__logo">
+                        <i class='bx bxs-disc nav__icon' ></i>
+                        <span class="nav__logo-name">SKAE</span>
+                    </a>
+    
+                    <div class="nav__list">
+                        <div class="nav__items">
+                            {% comment %} <h3 class="nav__subtitle">Profile</h3> {% endcomment %}
+    
+                            <a href="#" class="nav__link active">
+                                <i class='bx bx-grid-alt nav__icon' ></i>
+                                <span class="nav__name">Dashboard</span>
+                            </a>
+                            
+
+                           
+
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-slideshow nav__icon' ></i>
+                                <span class="nav__name">ClassRooom</span>
+                            </a>
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-rupee nav__icon' ></i>
+                                <span class="nav__name">Memberships</span>
+                            </a>
+
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-book nav__icon' ></i>
+                                <span class="nav__name">Courses</span>
+                            </a>
+
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-gift nav__icon' ></i>
+                                <span class="nav__name">Refer & Earn</span>
+                            </a>
+
+                    
+                            
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-pie-chart-alt-2 nav__icon' ></i>
+                                <span class="nav__name">My Progress</span>
+                            </a>
+
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-bell nav__icon' ></i>
+                                <span class="nav__name">Notifications</span>
+                            </a>
+
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-cog nav__icon'></i>
+                                <span class="nav__name">Settings</span>
+                            </a>
+
+                             <a href="#" class="nav__link">
+                                <i class='bx bx-user-circle nav__icon'></i>
+                                <span class="nav__name">Profile</span>
+                            </a>
+
+
+                        </div>
+    
+                        {% comment %} <div class="nav__items">
+                            <h3 class="nav__subtitle">Menu</h3>
+    
+                            <div class="nav__dropdown">
+                                <a href="#" class="nav__link">
+                                    <i class='bx bx-bell nav__icon' ></i>
+                                    <span class="nav__name">Notifications</span>
+                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a href="#" class="nav__dropdown-item">Blocked</a>
+                                        <a href="#" class="nav__dropdown-item">Silenced</a>
+                                        <a href="#" class="nav__dropdown-item">Publish</a>
+                                        <a href="#" class="nav__dropdown-item">Program</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-compass nav__icon' ></i>
+                                <span class="nav__name">Explore</span>
+                            </a>
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-bookmark nav__icon' ></i>
+                                <span class="nav__name">Saved</span>
+                            </a>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+
+                <a href="{% url 'accounts:logout' %}" class="nav__link nav__logout">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Log Out</span>
+                </a>
+            </nav>
+        </div>
+
+<!--========== CONTENTS ==========-->
+  <main>
+      <section>
+          
+            {% block content %}{% endblock content %}
+          
+      </section>
+  </main>
+
+      <!--========== MAIN JS ==========-->
+      <script src="{% static 'reports/js/sidebar2.js' %}"></script>
+      {% block custom_js %}{% endblock custom_js %}
+  </body>
+</html>

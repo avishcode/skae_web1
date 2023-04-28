@@ -1,0 +1,55 @@
+{% extends "website/base.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+job
+{% endblock title %}
+{% block custom_css %}{% endblock custom_css %}
+
+{% block content %}
+
+<section class="sub-header">
+  
+</section>
+
+<section class="book-demo section-padding">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="section-title">
+            <h2>Join India's biggest platform of <span> Spoken English </span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-5">
+            <div class="book-demo-image">
+            <img src="{% static 'website/img/undraw_remotely_2j6y.svg' %}" alt="">
+            </div>
+        </div>
+         <div class="col-lg-8 col-md-7">
+         <div class="book-demo-title">
+                <h3 class="text-center mb-3">Please Enter your details</h3>
+            </div>
+            <div class="book-demo-form">
+               <div class="contact-form">
+              <form action="" method="post" enctype="multipart/form-data" class="">
+                {% csrf_token %}
+                {{form|crispy}}
+            <p>*fields are mandatory</p>
+                <button type="submit" class="btn btn-2">Submit</button>
+                {% if form.non_field_erros %}
+                    {% for error in form.non_field_erros %}
+                    <p class="alert alert-danger my-3">{{error}}</p>
+                    {% endfor %}
+                {% endif %}
+                
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock content %}

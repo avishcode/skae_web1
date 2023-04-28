@@ -1,0 +1,60 @@
+{% extends "reports/admin/base.html" %}
+{% load static %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'crm/css/crm.css' %}">
+{% endblock custom_css %}
+
+{% block page_title %}
+
+{% endblock page_title %}
+
+
+{% block content %}
+<div class="container-fluid contact-list">
+    <div class="card col-lg-12">
+        <table class="table">
+        
+            <thead>
+                <tr>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                {% comment %} <th scope="col">Email</th> {% endcomment %}
+                <th scope="col">Message</th>
+                <th scope="col">Status</th>
+                <th scope="col">Notes</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            {% for object in object_list %}
+            <tbody>
+                <tr>
+                <th scope="row">{{ object.id }}</th>
+                <td><a href="{{ object.get_absolute_url }}">{{ object.name }}</a><br> <span>{{ object.email }}</td>
+                <td>{{ object.phone }}</span></td>
+                {% comment %} <td>{{ object.email }}</td> {% endcomment %}
+                <td>{{ object.message }}</td>
+                <td><span class="badge bg-info text-white">{{ object.query_status }}</span></td>
+                <td>{{object.follow_up_note}}<br>{{object.updated_at}}<br> <span><a href="{% url 'crm:contact-followup' %}">Add comment</a></span></td>
+                <td>{{object.owner}}</td>
+                {% comment %} <td><a href="{% url 'crm:update-contact' 'object.id' %}"><button type="button" class="btn btn-primary">Edit</button></a> </td> {% endcomment %}
+                <td><a href="{% url 'crm:update-contact' pk=object.pk %}"><button type="button" class="btn btn-primary">Edit</button></a> </td>
+                </tr>
+            </tbody>
+        {% endfor %}    
+        </table>
+        
+        
+    </div>
+
+</div>
+{% endblock content %}
+
+
+{% block custom_js %}{% endblock custom_js %}

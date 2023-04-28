@@ -1,0 +1,61 @@
+{% extends "reports/admin/base.html" %}
+
+{% block title %}membership{% endblock title %}
+
+{% block custom_css %}{% endblock custom_css %}
+
+{% block page_title %}
+Hello, {{request.user}}
+{% for message in messages %}
+                        <p id="messages" {% if message.tags %} class="alert alert-{{message.tags}}"{% endif %}>{{message}}</p>
+                    {% endfor %}
+{% endblock page_title %}
+
+{% block content %}
+<div class="card" style="">
+<div class="card-body">
+  <div class="row">
+    <div class="col-lg-6">
+      <h5 class="card-title">{{ object.class_room_name }}</h5>
+    </div>
+    <div class="col-lg-6 text-right">
+      <a href="#"><button class="btn btn-primary" style="margin-bottom: 10px;">Create Membership</button></a>
+    </div>
+  </div>
+          <table class="table table-hover">
+      <thead>
+          <tr>
+          <th scope="col">#</th>
+          <th scope="col">Membership Type</th>
+          <th scope="col">Membership Name</th>
+          {% comment %} <th scope="col">Users</th> {% endcomment %}
+          <th scope="col">Price</th>
+          
+          <th scope="col">Actions</th>
+          </tr>
+      </thead>
+      
+      <tbody>
+      {% for object in object_list %}
+          <tr>
+          <th scope="row">{{object.id}}</th>
+          <td>{{object.mem_type}}</td>
+          <td><a href="{{ get_absolute_url }}">{{ object.name }}</a></td>
+          <td>{{object.price}}</td>
+          
+        
+        
+          <td><button class="btn btn-primary">Actions</button></td> 
+          </tr>
+          {% empty %}
+          <h3 class="text-center text-black">No Room available</h3>
+        </tbody>
+        {% endfor %}
+      </table>
+  </div>
+</div>
+
+
+{% endblock content %}
+
+{% block custom_js %}{% endblock custom_js %}

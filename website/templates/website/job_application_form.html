@@ -1,0 +1,223 @@
+{% extends "website/base.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+job
+{% endblock title %}
+{% block custom_css %}{% endblock custom_css %}
+
+{% block content %}
+
+<section class="sub-header">
+  
+</section>
+
+<section class="book-demo section-padding">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            {% comment %} <div class="section-title">
+            <h2>Join India's biggest platform of <span> Spoken English </span></h2>
+            </div> {% endcomment %}
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-5">
+            <div class="book-demo-image">
+            <div class="section-title">
+            <h2>Join India's biggest platform for <span> Spoken English </span></h2>
+            </div>
+            <img src="{% static 'website/img/join_us.svg' %}" alt="">
+            </div>
+        </div> 
+         <div class="col-lg-8 col-md-8">
+         <div class="book-demo-title">
+                <h3 class="text-center mb-3">Please Enter your details</h3>
+            </div>
+            <div class="book-demo-form">
+               <div class="contact-form">
+                <form action="" method="post" enctype="multipart/form-data" class="">
+                  {% csrf_token %}
+                    <div class="row">
+                      <div class="col-lg-4 first_name">
+                        <div id="div_id_first_name" class="form-group">
+                        <label for="id_first_name" class=" requiredField"><span class="asteriskField"></span> </label> 
+                        <div class=""> 
+                        <input type="text" name="first_name" placeholder="First Name*" maxlength="200" class="textinput       textInput form-control" required="" id="id_first_name">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 median_name">
+                        <div id="div_id_median_name" class="form-group"> <label for="id_median_name" class="">
+            </label> <div class=""> <input type="text" name="median_name" placeholder="Middle Name" maxlength="200" class="textinput textInput form-control" id="id_median_name"> </div> </div>
+                      </div>
+                      <div class="col-lg-4 last_name">
+                        <div id="div_id_last_name" class="form-group"> <label for="id_last_name" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <input type="text" name="last_name" placeholder="Last Name*" maxlength="200" class="textinput textInput form-control" required="" id="id_last_name"> </div> </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-4 enter-email">
+                      <div id="div_id_email" class="form-group"> <label for="id_email" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <input type="email" name="email" placeholder="Enter Email*" class="form-control emailinput form-control" maxlength="254" required="" id="id_email"> </div> </div>
+                      </div>
+                      <div class="col-lg-4 enter-phone">
+                        <div id="div_id_phone" class="form-group"> <label for="id_phone" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <input type="text" name="phone" placeholder="Enter Phone*" maxlength="255" class="textinput textInput form-control" required="" id="id_phone"> </div> </div>
+                      </div>
+                      <div class="col-lg-4 enter-dob">
+                        <div id="div_id_dob" class="form-group"> <label for="id_dob" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> <input type="date" placeholder="DOB" name="dob" class="dateinput form-control" required="" id="id_dob"> </div> </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 enter-address">
+                      <div id="div_id_address" class="form-group"> <label for="id_address" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <input type="text" name="address" placeholder="Enter Address*" class="form-control textinput textInput form-control" maxlength="100" required="" id="id_address"> </div> </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 enter-city">
+                        <div id="div_id_city" class="form-group"> <label for="id_city" class=" requiredField">
+                          <span class="asteriskField"></span> </label> <div class=""> 
+                          <input type="text" name="city" placeholder="Enter city*" class="form-control textinput textInput form-control" maxlength="100" required="" id="id_city"> 
+                          </div> 
+                        </div>
+                      </div>
+                      <div class="col-lg-6 enter-state">
+                        <div id="div_id_state" class="form-group"> <label for="id_state" class=" requiredField">
+                          <span class="asteriskField"></span> </label> <div class=""> 
+                          <select name="state" class="form-control select form-control" required="" id="id_state"> <option value="" selected="">Select State</option> <option value="Andaman &amp; Nicobar Islands">Andaman &amp; Nicobar Islands</option> <option value="Andhra Pradesh">Andhra Pradesh</option> <option value="Arunachal Pradesh">Arunachal Pradesh</option> <option value="Assam">Assam</option> <option value="Bihar">Bihar</option> <option value="Chandigarh">Chandigarh</option> <option value="Chhattisgarh">Chhattisgarh</option> <option value="Dadra &amp; Nagar Haveli">Dadra &amp; Nagar Haveli</option> <option value="Daman and Diu">Daman and Diu</option> <option value="Delhi">Delhi</option> <option value="Goa">Goa</option> <option value="Gujarat">Gujarat</option> <option value="Haryana">Haryana</option> <option value="Himachal Pradesh">Himachal Pradesh</option> <option value="Jammu &amp; Kashmir">Jammu &amp; Kashmir</option> <option value="Jharkhand">Jharkhand</option> <option value="Karnataka">Karnataka</option> <option value="Kerala">Kerala</option> <option value="Lakshadweep">Lakshadweep</option> <option value="Madhya Pradesh">Madhya Pradesh</option> <option value="Maharashtra">Maharashtra</option> <option value="Manipur">Manipur</option> <option value="Meghalaya">Meghalaya</option> <option value="Mizoram">Mizoram</option> <option value="Nagaland">Nagaland</option> <option value="Odisha">Odisha</option> <option value="Puducherry">Puducherry</option> <option value="Punjab">Punjab</option> <option value="Rajasthan">Rajasthan</option> <option value="Sikkim">Sikkim</option> <option value="Tamil Nadu">Tamil Nadu</option> <option value="Telangana">Telangana</option> <option value="Tripura">Tripura</option> <option value="Uttarakhand">Uttarakhand</option> <option value="Uttar Pradesh">Uttar Pradesh</option> <option value="West Bengal">West Bengal</option>
+                      </select> 
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                      <div class="row">
+                        <div class="col-lg-6 qualifcation">
+                          <div id="div_id_education" class="form-group"> <label for="id_education" class=" requiredField">
+              <span class="asteriskField"></span> </label> <div class=""> 
+                <input type="text" name="education" placeholder="Qualifications*" maxlength="100" class="textinput textInput form-control" required="" id="id_education"> </div> </div>
+                        </div>
+                        {% comment %} <div class="col-lg-6 cetificated">
+                          <div id="div_id_education" class="form-group"> <label for="id_education" class=" requiredField">
+              <span class="asteriskField"></span> </label> <div class=""> 
+                <input type="text" name="education" placeholder="Certificate (If any)" maxlength="100" class="textinput textInput form-control" required="" id="id_education"> </div> </div>
+                        </div> {% endcomment %}
+                      </div>
+                    <div class="row">
+                      <div class="col-lg-12 describe-working-exp">
+                        <div id="div_id_working_exp" class="form-group"> <label for="id_working_exp" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <textarea name="working_exp" cols="40" placeholder="Work experience*" rows="10" class="textarea form-control" required="" id="id_working_exp"></textarea> </div> </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-6 hobbies">
+                        <div id="div_id_hobbies" class="form-group"> <label for="id_hobbies" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <textarea name="hobbies" placeholder="Hobbies*" cols="40" rows="10" class="textarea form-control" required="" id="id_hobbies"></textarea> </div> </div>
+                      </div>
+                      <div class="col-lg-6 skills">
+                        <div id="div_id_skills" class="form-group"> <label for="id_skills" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <textarea name="skills" placeholder="Skills*" cols="40" rows="10" class="textarea form-control" required="" id="id_skills"></textarea> </div> </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 strength">
+                        <div id="div_id_strength" class="form-group"> <label for="id_strength" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <textarea name="strength" placeholder="Strength*" cols="40" rows="10" class="textarea form-control" required="" id="id_strength"></textarea> </div> </div>
+                      </div>
+                      <div class="col-lg-6 weakness">
+                        <div id="div_id_weakness" class="form-group"> <label for="id_weakness" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <textarea name="weakness" placeholder="Weakness*" cols="40" rows="10" class="textarea form-control" required="" id="id_weakness"></textarea> </div> </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 discussion-topic">
+                        <div id="div_id_discussion_topic" class="form-group"> <label for="id_discussion_topic" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <textarea name="discussion_topic" placeholder="5 Favourite Discussion Topics*" cols="40" rows="10" class="textarea form-control" required="" id="id_discussion_topic"></textarea> <small id="hint_id_discussion_topic" class="form-text text-muted"></small> </div> </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 describe-life">
+                        <div id="div_id_describe_life" class="form-group"> <label for="id_describe_life" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <textarea name="describe_life" placeholder="Describe Life* (Minimum 50 words)" cols="40" rows="10" class="textarea form-control" required="" id="id_describe_life"></textarea> <small id="hint_id_describe_life" class="form-text text-muted"></small> </div> </div>
+                      </div>
+                    </div>
+                      <div class="row">
+                    <div class="col-lg-12 describe-yourself">
+                        <div id="div_id_describe_yourself" class="form-group"> <label for="id_describe_yourself" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <textarea name="describe_yourself" placeholder="Describe Yourself* (Minimum 50 words)" cols="40" rows="10" class="textarea form-control" required="" id="id_describe_yourself"></textarea> <small id="hint_id_describe_yourself" class="form-text text-muted"></small> </div> </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-12 non-judgmental">
+                        <div id="div_id_non_judgmental" class="form-group"> <label for="id_non_judgmental" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <textarea name="non_judgmental" placeholder="What do you mean by being non-judgmental?* (Minimum 50 words)" cols="40" rows="10" class="textarea form-control" required="" id="id_non_judgmental"></textarea> <small id="id_non_judgmental" class="form-text text-muted"></small> </div> </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 counselling">
+                        <div id="div_id_counselling" class="form-group"> <label for="id_counselling" class=" requiredField">
+                <span class="asteriskField"></span> </label> <div class=""> 
+                <textarea name="counselling" placeholder="What do you mean by Counselling? (Minimum 50 words)" cols="40" rows="10" class="textarea form-control" required="" id="id_counselling"></textarea> <small id="hint_id_counselling" class="form-text text-muted"></small> </div> </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" for="inputGroupFile01">Resume</label>
+                          <input type="file" name="resume" class="form-control" id="inputGroupFile01">
+                        </div>
+                      </div>
+                    </div>
+                    
+                  <button type="submit" class="btn btn-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

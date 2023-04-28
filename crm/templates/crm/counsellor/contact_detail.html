@@ -1,0 +1,28 @@
+{% extends "reports/cousellor/base.html" %}
+
+
+{% block title %}
+detail {{object.first_name}}
+{% endblock title %}
+
+{% block custom_css %}{% endblock custom_css %}
+
+{% block page_title %}
+
+{% endblock page_title %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="card">
+        <p>{{ object.name }}</p>
+        <p>{{object.phone}}</p>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+
+{% block custom_js %}{% endblock custom_js %}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- owl carousel css --> 
+  <link rel="stylesheet" href="{% static 'reports/css/owl.carousel.min.css' %}"> 
+  <!-- font awesome icons --> 
+  <link rel="stylesheet" href="{% static 'reports/css/font-awesome.css' %}"> 
+  <!-- bootstrap css --> 
+  <link rel="stylesheet" href="{% static 'reports/css/bootstrap.min.css' %}"> 
+  <!-- main css -->
+  <link rel="stylesheet" href="{% static 'reports/css/style.css' %}">
+  <!-- Boxicons CDN links -->
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>  
+
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    {% block custom_css %}{% endblock custom_css %}
+
+  <title>SKAE {% block title %}{% endblock title %}</title>
+</head>
+<body>
+<!-- sidebar Section Start -->
+  <input type="checkbox" id="nav-toggle">
+  <div class="sidebar">
+    <div class="sidebar-brand">
+    <img src="{% static 'website/img/logo/c_logo.png' %}" style="width:100px" alt="">
+      {% comment %} <h2><span class="lab la-SKAE"></span> <span>SKAE</span></h2> {% endcomment %}
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        <li>
+        <a href="#" class="active">
+        <span ><i class="las la-tachometer-alt"></i></span>
+        <span>Dashboard</span>
+        </a>
+        </li>
+        <li>
+        <a href="#">
+        <span ><i class="las la-tint"></i></i></span>
+        <span>Leads</span>
+        </a>
+        </li>
+        <li>
+        <a href="#">
+        <span ><i class="las la-users"></i></i></span>
+        <span>Users</span>
+        </a>
+        </li>
+        <li>
+        <a href="#">
+        <span ><i class="las la-desktop"></i></i></span>
+        <span>ClassRooom</span>
+        </a>
+        </li>
+        <li>
+        <a href="#">
+        <span ><i class="las la-rupee-sign"></i></i></span>
+        <span>Memberships</span>
+        </a>
+        </li>
+        <li>
+        <a href="#">
+        <span ><i class="las la-book"></i></i></span>
+        <span>Courses</span>
+        </a>
+        </li>
+        <li>
+        <a href="#">
+        <span ><i class="las la-bullhorn"></i></i></span>
+        <span>Announcement</span>
+        </a>
+        </li>
+        <li>
+        <a href="#">
+        <span ><i class="las la-chart-pie"></i></i></span>
+        <span>Reports</span>
+        </a>
+        </li>
+        <li>
+        <a href="#">
+        <span ><i class="las la-cog"></i></i></span>
+        <span>Settings</span>
+        </a>
+        </li>
+        <li>
+        <a href="{% url 'accounts:logout' %}">
+        <span ><i class="las la-sign-out-alt"></i></span>
+        <span>Logout</span>
+        </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<div class="main-content">
+  <header>
+    <h2>
+      <label for="nav-toggle">
+        <span class="las la-bars"></span>
+      </label>
+      {% block page_title %}
+      
+      {% endblock page_title %}
+      </h2>
+      <div class="user-wrapper">
+        <img src="{% static 'website/img/team/2.jpg' %}" style="width: 40px;"alt="profile">
+        <div class="">
+          <h4>{{request.user}}</h4>
+          <small>{{ user.groups.all.0 }}</small>
+        </div>
+      </div>
+  </header>
+  <main>
+    {% block content %}
+    
+    {% endblock content %}
+  </main>
+</div>
+<!-- Footer Section Start -->
+<!-- Footer Section End -->
+
+
+
+
+
+
+<!-- jquery js -->
+<script src="{% static 'reports/js/jquery.min.js' %}"></script>
+<!-- popper js -->
+<script src="{% static 'reports/js/popper.min.js' %}"></script>
+<!-- bootstrap js -->
+<script src="{% static 'reports/js/bootstrap.min.js' %}"></script>
+<!-- owl carousel js -->
+<script src="{% static 'reports/js/owl.carousel.min.js' %}"></script>
+<!-- main js -->
+<script src="{% static 'reports/js/main.js' %}"></script>
+{% block custom_js %}
+
+{% endblock custom_js %}
+</body>
+</html>

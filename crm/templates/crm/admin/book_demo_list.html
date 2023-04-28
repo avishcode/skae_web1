@@ -1,0 +1,64 @@
+{% extends "reports/admin/base.html" %}
+{% load static %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block custom_css %}{% endblock custom_css %}
+
+{% block page_title %}
+
+{% endblock page_title %}
+
+
+{% block content %}
+
+<div class="card" style="">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-6">
+        <h5 class="card-title">Demo Students List</h5>
+      </div>
+      <div class="col-lg-6 text-right">
+        <a href="#"><button class="btn btn-primary" style="margin-bottom: 10px;">Add Demo</button></a>
+      </div>
+    </div>
+            <table class="table table-hover">
+        <thead>
+            <tr>
+            {% comment %} <th scope="col">#</th> {% endcomment %}
+            <th scope="col">Student Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Age Group</th>
+            <th scope="col">Time & Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Note</th>
+            <th scope="col">Owner</th>
+            <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+        {% for object in object_list %}
+            <tr>
+            {% comment %} <th scope="row">{{object.id}}</th> {% endcomment %}
+            <td><a href="#">{{object.name}}</a></td>
+            <td>{{object.phone}}</td>
+            <td>{{object.age_group}}</td>
+            <td>{{object.date}} <br> {{object.time}}</td>
+            <td>{{object.status}}</td>
+            <td><button class="btn btn-primary">Actions</button></td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+        </table>
+  </div>
+</div>
+
+{% endblock content %}
+
+
+
+{% block custom_js %}{% endblock custom_js %}

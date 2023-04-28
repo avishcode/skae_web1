@@ -1,0 +1,36 @@
+.login-section{
+    background-color: #94bfff;
+
+}
+
+.book-demo-title h3{
+    font-size: 22px;
+    color: var(--black-900);
+    font-weight: 500;
+    margin: 0 0 40px;
+}
+
+.book-demo-image img{
+    margin-top: 50px;
+    margin-right: 20px;
+    padding-top: 10px;
+
+}
+
+.book-demo-form .form-group{
+    margin-bottom: 25px;
+}
+
+.book-demo-form .form-control{
+    height: 52px;
+    border: 1px solid transparent;
+    box-shadow: var(--shadow-black-100);
+    border-radius: 30px;
+    background-color: var(--black-100);
+    transition: all 0.5s ease;
+}
+
+
+.book-demo-form .form-control:focus{
+    border-color: var(--main-color);
+}

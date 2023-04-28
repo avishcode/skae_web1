@@ -1,0 +1,60 @@
+{% extends "reports/admin/base.html" %}
+{% load static %}
+
+{% block title %}
+application
+{% endblock title %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'crm/css/crm.css' %}">
+{% endblock custom_css %}
+
+{% block page_title %}
+
+{% endblock page_title %}
+
+
+{% block content %}
+<div class="container-fluid contact-list">
+    <div class="card col-lg-12">
+        <table class="table">
+        
+            <thead>
+                <tr>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Education</th>
+                <th scope="col">State</th>
+                <th scope="col">Status</th>
+                <th scope="col">Notes</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            {% for object in object_list %}
+            <tbody>
+                <tr>
+                <th scope="row">{{ object.id }}</th>
+                <td><a href="{{ object.get_absolute_url }}">{{ object.first_name }} <br> <span>{{ object.last_name }}</span></a></td>
+                <td>{{ object.phone }} <br> <span>{{ object.email }}</span></td>
+                <td>{{ object.education }}</td>
+                <td>{{ object.state }}</td>
+                <td><span class="badge bg-info text-white">{{ object.status }}</span></td>
+                <td><a href="">{{ object.resume }}</a></td>
+                <td>Owner</td>
+                <td><button type="button" class="btn btn-primary">Edit</button></td>
+
+                </tr>
+            </tbody>
+        {% endfor %}    
+        </table>
+        
+        
+    </div>
+
+</div>
+{% endblock content %}
+
+
+{% block custom_js %}{% endblock custom_js %}

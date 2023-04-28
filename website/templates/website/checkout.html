@@ -1,0 +1,110 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block title %}{% endblock title %}
+
+{% block content %}
+<section class="checkout">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="checkout-img">
+                    <h2 class="mb-3">Hello Vishal</h2>
+                    <h3 class="mb-3">Thank you for Choosing Item</h3>
+                    <h5 class="mb-3">See you in the class</h5>
+                    <img src="{% static 'website/img/checkout/undraw_Hello_re_3evm.svg' %}" alt="">
+                    <p class="mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="checkout-item">
+                    <h5>Product Name : <span>King</span></h5>
+                     <p>
+                     <strong>Plan Description:</strong>
+                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    </p>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Plan or Course Name</th>
+                            <th>Membership Type</th>
+                            <th>No. of Classes</th>
+                            <th>Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Knowledge <br><span class="text-muted">This course is for beginners</span></td>
+                            <td>Courses</td>
+                            <td>25</td>
+                            <td>4500</td>
+                        </tr>
+                        <tr>
+                            <td>King <br><span class="text-muted">This live gd classes</span></td>
+                            <td>king</td>
+                            <td>25</td>
+                            <td>1499</td>
+                        </tr>
+                        <tr>
+                            <td>Starting <br><span class="text-muted">This course is basic</span></td>
+                            <td>courses</td>
+                            <td>25</td>
+                            <td>1499</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-6">
+                            <b>Total</b>
+                        </div>
+                        <div class="col-md-6">
+                            $ 5000
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-4 promo-code">
+                        <h5>Promo Code</h5>
+                        </div>
+                        <div class="col-md-4 promo-code-input">
+                        <div class="form-group">    
+                            <input type="text" class="form-control" id="promo">
+                        </div>
+                        </div>
+                        <div class="col-md-4 promo-code-btn">
+                            <button type="submit" class="btn btn-2">Apply</button>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-4 credits">
+                        <h5>Credits</h5>
+                        </div>
+                        <div class="col-md-4 credits-input">
+                        <div class="form-group">    
+                            <input type="text" class="form-control" id="credits">
+                        </div>
+                        </div>
+                        <div class="col-md-4 promo-code-btn">
+                            <button type="submit" class="btn btn-2">Apply</button>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 amount-pay">
+                        <h5>Amount Payable</h5>
+                        </div>
+                        <div class="col-md-4 amount-input">
+                        <div class="form-group">    
+                            <input type="text" class="form-control" disabled id="credits">
+                        </div>
+                        </div>
+                        <div class="col-md-4 promo-code-btn">
+                            <button type="submit" class="btn btn-2">Pay Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  
+{% endblock content %}
+
+{% block custom_js %}{% endblock custom_js %}

@@ -1,0 +1,65 @@
+{% extends "reports/admin/base.html" %}
+
+
+{% block title %}
+
+{% endblock title %}
+
+{% block custom_css %}{% endblock custom_css %}
+
+{% block page_title %}
+
+{% endblock page_title %}
+
+
+{% block content %}
+    
+<div class="card" style="">
+<div class="card-body">
+  <div class="row">
+    <div class="col-lg-6">
+      <h5 class="card-title">{{ object.class_room_name }}</h5>
+    </div>
+    <div class="col-lg-6 text-right">
+      <a href="{% url 'classroom:add-room' %}"><button class="btn btn-primary" style="margin-bottom: 10px;">Add Rooom</button></a>
+    </div>
+  </div>
+          <table class="table table-hover">
+      <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Rooom Name</th>
+            <th scope="col">Trainer</th>
+            <th scope="col">Scheduled Day</th>
+            <th scope="col">Status</th>
+            <th scope="col">Memberships</th>
+            <th scope="col">Actions</th>
+          </tr>
+      </thead>
+      
+      <tbody>
+      {% for room in object.rooms %}
+          <tr>
+          <th scope="row">{{room.id}}</th>
+          <td><a href="{{ room.get_absolute_url }}">{{ room.room_name }}</a></td>
+          <td>{{room.trainer}}</td>
+          <td>{{room.days}}</td>
+          <td><span class="badge rounded-pill bg-success text-white">Active</span></td>
+          <td>{{object.class_type}}</td>
+          <td><button class="btn btn-primary">Sign-in</button></td> 
+          </tr>
+          {% empty %}
+          <h3 class="text-center text-black">No Room available</h3>
+        </tbody>
+        {% endfor %}
+      </table>
+  </div>
+</div>
+      
+            
+        
+        
+{% endblock content %}
+
+
+{% block custom_js %}{% endblock custom_js %}
